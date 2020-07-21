@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Acentuação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre Google Glass</title>
+
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+
+</head>
+<script src="_javascript/funcoes.js"></script>
+
+<script>
+    function calc_total(){
+        var qtd = parseInt(document.getElementById('cQtd').value)
+        tot = qtd * 1500
+        document.getElementById('cTot').value = tot
+    }
+</script>
+<body>
+    <div id="interface">
+        <!--Divisão-->
+        <header id="cabecalho">
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+            <img id="icone" src="_imagens/contato.png">
+
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul type = "circle"> 
+
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="index.html">Home</a>
+                    </li><!-- Lista de itens-->
+
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fotos.html">Fotos</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fale-conosco.html">Fale conosco</a>
+                        <!--Link interno não precisa de _blank-->
+                    </li>
+                </ul>
+                
+            </nav>
+            
+        </header>
+        <section id="corpo-full"> <!--ocupa toda a porção horizontal da pag-->
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </header>
+                    <form method="POST" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total()"> <!--action vai mandar os dados pro email, mas não funciona efetivamente. Precisa de tratamento por BD-->
+                    
+                        <fieldset id="usuario">
+
+                            <!--Conjunto de campos-->
+                            <legend>Identificação do Usuário</legend>
+                            <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+                            <!--Não usar o mesmo nome pra id e name-->
+
+                            <p><label for="cMail">E-mail: </label><input type="email" name="tMail" id="cMail" size="20" maxlength="40"></p>
+                            
+                            <p><label for="cSenha">Senha: </label><input type="password" name="tSenha" id="cSenha" size="12" maxlength="8" placeholder="Senha de 8 digitos"></p>
+                            
+                            
+                            
+                            <fieldset id="sexo">
+
+                                <legend>Sexo:</legend>
+                                <input type="radio" name="tSexo" id="cMasc" checked><label for="cMasc">Masculino</label>
+                                <br>
+                                <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label>
+                                 
+                            </fieldset>
+                              
+                            <p>Data de Nascimento: <input type="date" name="tNasc" id="cNasc"></p>
+                        </fieldset>
+
+                        <fieldset id="endereco">
+                            <!--
+                                fieldset => Separa em campos
+                            -->
+                            <legend>Endereço do Usuário</legend>
+
+                                <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="13" maxlength="88" placeholder="Rua"></p>
+                                
+                                <p><label for="cNum">Número: </label><input type="number" name="tNum" id="cNum" min="0" max="999999"></p>
+                                
+                                <p><label for="cEst">Estado: </label> <select name="tEst" id="cEst">
+                                    <optgroup label="Região Sudeste">
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="SP" selected>São Paulo</option>
+                                    </optgroup>
+
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Parná</option>
+
+                                    </optgroup>
+                                </select></p>
+                                
+
+                                <p><label for="cCid">Cidade: </label><input type="text" name="tCid" id="cCid" size="20" maxlength="40" list="cidades"></p>
+                                <datalist id="cidades">
+                                    <option value="Rio de Janeiro"></option>
+
+                                    <!--Faz aparecer o nome quando vc digita uma letra só como o "n" de "Nova Iguaçu"-->
+
+                                    <option value="Nova Iguaçu"></option>
+                                </datalist>
+
+                        </fieldset>
+
+                       <fieldset id="mensagem">
+                            <legend>Mensagem do Usuário</legend>
+                                <!--Legend faz ele ser o título do fieldset-->    
+
+                                <p>
+                                    <label for="cUrg">Grau de Urgência: </label>
+                                
+                                    0<input type="range" name="tUrg" id="cUrg" min="0" max="10">10
+                                
+                                </p>
+
+                                <p><label for="">Mensagem: </label><textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem..."></textarea></p>
+
+                       </fieldset>
+                       <fieldset id="pedido">
+                            <legend>Quero um Google Glass</legend>
+                                <p>
+                                    <input type="checkbox" name="tPed" id="cPed" checked>
+                                    <label for="cPed">
+                                        Gostaria de adquirir um Google Glass quando disponível
+                                    </label>
+                                </p>
+                                <p>
+                                    <label for="cCor">Cor: <input type="color" name="tCor" id="cCor" value="#0000ff"></label>
+                                </p>
+                                <p>
+                                    <label for="cQtd">Quantidade: <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></label>
+                                </p>
+                                <p>
+                                    <label for="cTot">Preço Total: R$ <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></label>
+                                </p>
+
+                       </fieldset>
+
+
+                       <input type="image" src="_imagens/botao-enviar.png" name="tEnviar">
+                    </form>
+            </article>
+        </section>
+    <footer id="rodape">    
+        <p>
+            Copyright &copy; 2013 - by Gustavo Guanabara
+            <br>
+            <a href="http://facebook.com/cursoemvideo"
+            target="_blank" id="morreu">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank" id="outraCoisa">Twitter</a>
+        </p>
+    </footer>
+    </div>
+</body>
+</html>

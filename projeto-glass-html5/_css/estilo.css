@@ -1,0 +1,337 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Varta:wght@300&display=swap');
+
+@font-face{
+    font-family: 'FonteLogo';
+    src: url(../_fonts/bubblegum-sans-regular.otf);
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #dddddd;
+    color: rgba(0, 0, 0, 1);
+    
+    /*
+    
+    ** 2 primeiros digitos = tons de vermelho
+    ** 2 digitos do meio = tons de verde
+    ** 2 últimos digitos = tons de azul
+    
+    color: red; 
+    ** Formata todo o texto em vermelho
+    
+    background-image: url("onde tá a imgaem"); 
+    ** Coloca uma imagem de background
+    
+    color: rgba(0, 0, 0, 0.5);
+    ** a = alpha  e q decide a opacidade do texto
+
+    background-color: hsl(H, S, L)
+    ** É o H, S e L do photoshop, por exemplo, e aqui também cabe o alpha
+
+    */
+}
+
+div#interface{
+    width: 1000px;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto;
+    /* Topo, direita, inferior, esquerda */
+    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Deslocamento ateral, vertical e espalhamento*/
+
+    padding: 10px; /* => todo os lados terão 10px */
+    /*
+    padding: 10px 10px 10px 10px;
+    Topo, direita, inferior, esquerda */
+
+    position: relative;
+    
+}
+
+p{
+    text-align: justify;
+    text-indent: 50px;
+}
+
+a{
+    color: #606060;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+header#cabecalho img#icone{
+    position: absolute;
+    left: 860px;
+    top: 80px;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 dashed; 
+    /* Aqui que cria a linha q corta a página 
+    ** doted = pontilhada
+    ** dashed = trassejado
+    ** solid é uma linha q corta a pág.
+    */
+
+    height: 150px;
+    
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+    /* Deslocamento vertical e horizontal */
+}
+
+header#cabecalho h1{
+    font-family: 'Varta', sans-serif;
+    font-size: 30pt;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    padding: 0px;
+    margin-bottom: 0px; /* margem de baixo */
+}
+
+header#cabecalho h2{
+    font-family: Arial, sans-serif;
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px; /* margem de cima */
+}
+
+/* Formatação de img e legendas */
+
+figure.foto-legenda{
+    position: relative;
+    /* Usa-se "." para classe*/
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+    
+}
+
+figure.foto-legenda img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+figure.foto-legenda figcaption{
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px; /*Cria espaço*/
+    box-sizing: border-box; /* Box dentro da borda*/
+    transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption{
+    /* hover = quando passa o mause por cima */
+    opacity: 1;
+}
+
+/* Formatação do menu */
+nav#menu{
+    display: block; /* Pode flutuar pela tela */
+
+}
+
+nav#menu ul{
+    /* # => usado pra id */
+    list-style: none;
+    text-transform: uppercase;
+    
+    position: absolute; 
+    /* Pode passar por cima dos documentos (fica livre pelo site). Se fosse relative e modificar top, left, usa a posição do li dentro do menu nav */
+    
+    top: 0px; 
+    /* Sobe o menu. 0px não fica totalmente em cima (na duvida, testa). */
+    
+    left: 300px; 
+    /* movimenta ele pra esquerda */
+}
+
+nav#menu li{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 10px; /* Cria um espaço dentro do objeto */
+    margin: 2px; /* Espaço fora do objeto */
+    
+    -webkit-transition: background-color 1s;
+    /* Quando não se sabe se uma certa formatação tem pra todos browsers, acessar http://pleeease.io/play/ e digitar o prefixo q vc quer (como no exemplo do transistores */
+
+    transition: background-color 0.5s;
+}
+
+nav#menu li:hover{
+    /* hover => Passar o mause */
+    background-color: #606060;
+}
+
+nav#menu h1{
+    display: none; /* Esconde o "Menu Principal" */
+}
+
+nav#menu a{
+    color: #000000;
+    text-decoration: none;
+}
+
+nav#menu a:hover{
+    /* hover => quando passar o mause por cima */
+    color: #ffffff; /* Muda a cor do texto */
+    text-decoration: underline; /* Sublinha o texto */
+}
+
+section#corpo{
+    display: block;
+    width: 500px;
+    float: left;
+    /* float => de flutar, joga essa aside pra direita */
+
+    border-right: 1px dashed #606060;
+    /* Cria a linha q separa o corpo e a lateral */
+
+    padding-right: 15px;
+}
+
+article#noticia-principal h2{
+    font-size: 13pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-artigo h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px
+    ;
+}
+.direita{
+    /* "." => class */
+    text-align: right;
+}
+
+header#cabecalho-artigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+    margin-top: 0px;
+}
+header#cabecalho-artigo h3{
+    font-size: 12px;
+    color: #606060
+}
+
+table#tabelaspec{
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right:auto ;
+}
+
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    /* padding = Espaço interno de todos objetos */
+
+    text-align: center;
+
+    vertical-align: middle;
+    /* Alinha o texto verticalmente (nesse caso, no top de cada linha) */
+}
+
+table#tabelaspec td.ce{
+    /* "." para class */
+    /* Class sobrepoe o id */
+    color: #ffffff;
+    background-color: #606060;
+    vertical-align: top;
+    text-align: right;
+    font-weight: bold;
+}
+
+table#tabelaspec td.cd{
+    /* "." para class */
+    background-color: #cecece;
+    text-align: left;
+    font-weight: bold;
+}
+
+table#tabelaspec caption{
+    color: #645c5c;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+table#tabelaspec caption span{
+    display: block;
+    /* Deixa o bloco flutuante */
+
+    float: right;
+    color: black;
+    font-size: 8pt;
+    margin-top: 10px;
+}
+
+aside#lateral{
+    display: block;
+    width: 460px;
+    float: right;
+    /* float => de flutar, joga essa aside pra direita */
+
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+aside#lateral h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2{
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5px;
+}
+
+/*
+
+Até aqui o background estava desconfigurado (comenta o que vem abaixo se quiser ver), pois o background termina no footer e não se tinha mexido no footer ainda
+
+*/
+
+footer#rodape{
+    clear: both; /* Limpa a configuração dos anteriores */
+    border-top: 1px dashed #606060;
+}
+
+
+footer#rodape p{
+    text-align: center;
+}
+/* Formatação de link que EU fiz 
+footer#rodape a#morreu{
+    color: red;
+    text-decoration: none;
+}
+
+footer#rodape a#outraCoisa{
+    color: yellowgreen;
+    text-decoration: none;
+}
+*/

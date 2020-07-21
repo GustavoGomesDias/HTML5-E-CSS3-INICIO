@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Acentuação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre Google Glass</title>
+
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/specs.css">
+
+</head>
+<script src="_javascript/funcoes.js"></script>
+<body>
+    <div id="interface">
+        <!--Divisão-->
+        <header id="cabecalho">
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+            <img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul type = "circle"> 
+
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">
+                        <a href="index.html">Home</a>
+                    </li><!-- Lista de itens-->
+
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">
+                        <a href="fotos.html">Fotos</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')">
+                        <a href="fale-conosco.html">Fale conosco</a>
+                        <!--Link interno não precisa de _blank-->
+                    </li>
+                </ul>
+                
+            </nav>
+            
+        </header>
+        <section id="corpo-full"> <!--ocupa toda a porção horizontal da pag-->
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <h3>Glass > Especificações</h3>
+                    <h1>Raio-X no Google Glass</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </header>        
+
+                <p>
+                    Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.
+                </p>
+            </article>
+
+            <section id="conteudo">
+                <img src="_imagens/glass-esquema-marcado.jpg"
+                usemap="#meumapa">
+                <map name="meumapa">
+                    <area shape="poly"  coords="182,219,184,228,185,241,185,254,266,243,265,209" href="google-glass.html#tela" target="janela">
+
+                    <area shape="circle"  coords="157,243,11" href="google-glass.html#camera" target="janela">
+                    
+                    <area shape="circle"  coords="77,51,11" href="google-glass.html#gadgets" target="janela">
+                    
+                    <area shape="poly"  coords="81,216,28,146,27,168,82,249" href="google-glass.html#sensores" target="janela">
+
+                    <!-- rect é área retângular 
+                    coords => cordenadas que ele pegou na imgagem usando o photoshop (ver vídeo aula 28)
+                    poly => poligno
+                    href => abre o google-glass.html direto na tela
+                    -->
+                </map>
+                <iframe src="google-glass.html" name="janela" id="frame-spec"></iframe>
+
+
+                <!-- iframe => serve pra abrir outra página em uma página. Aqui ele está do lado da imagem por que está em uma section
+                ** Só vai ser usado aqui nesse arquivo, então não tem por que editar o estilo dele no main css (estilo.css), editar lá só ia sobrecarregar o css principal. Será editado em um css próprio.
+                -->
+            </section>
+        </section>
+
+<footer id="rodape">    
+    <p>
+        Copyright &copy; 2013 - by Gustavo Guanabara
+        <br>
+        <a href="http://facebook.com/cursoemvideo"
+        target="_blank" id="morreu">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank" id="outraCoisa">Twitter</a>
+    </p>
+</footer>
+</div>
+</body>
+</html>
